@@ -153,3 +153,17 @@ def main():
 print("Welcome to Love Sandwiches Data Automation")
 main()
 
+
+# Code from final challenge
+def get_stock_values(data):
+    """
+    Creates a dictionary of sandwich types and stock for next market
+    """
+    headings = SHEET.worksheet("stock").row_values(1)
+    
+    to_make = dict(zip(headings, data))
+    return to_make
+
+
+stock_values = get_stock_values(stock_data)
+print(stock_values)
